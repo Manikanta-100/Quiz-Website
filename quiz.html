@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Test</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        header {
+            border-top: 2px solid aliceblue;
+            height: 125px;
+            background-color: aliceblue;
+            position: sticky;
+            top: 0px;
+            opacity: 1;
+            z-index: 100;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);
+        }
+
+        .left {
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            left: 34px;
+            margin: 0px 20px;
+
+        }
+
+        .left img {
+            width: 75px;
+            margin: 0px;
+        }
+
+        .left div {
+            text-align: center;
+            font: 30px bold;
+            margin: 0px;
+        }
+
+        .mid {
+            display: block;
+            width: 33%;
+            margin: 30px auto;
+        }
+
+        .mid a {
+            padding: 18px;
+            margin: 5px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .mid a:hover,
+        .mid a.active {
+            color: rgb(9, 9, 9);
+            text-decoration: underline;
+        }
+
+        .right {
+            display: inline-block;
+            position: absolute;
+            top: 10px;
+            right: 34px;
+        }
+
+        button {
+            background-color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: aliceblue;
+            text-decoration: none;
+            font-size: 15px;
+            border: 2px solid rgb(27, 25, 25);
+            padding: 0px 14px;
+            border-radius: 10px;
+            height: 34px;
+            cursor: pointer;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .hide {
+            display: none;
+            /* border: 2px solid red; */
+        }
+
+        li {
+            list-style: none;
+            font-size: 18px;
+            width: 200px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        li:hover {
+            background-color: azure;
+            cursor: pointer;
+        }
+
+        .box {
+            border: 2px solid red;
+            width: 50%;
+            margin: 100px 400px;
+            background: transparent;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            justify-content: center;
+            align-items: center;
+            background-color: #e2cfea;
+        }
+
+        p {
+            font-weight: bolder;
+            font-size: 25px;
+        }
+
+        .hide button {
+            margin: 20px;
+            margin-right: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .countdown {
+            font-size: 17px;
+            font-weight: bold;
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .new-button {
+            align-items: center;
+            justify-content: center;
+            display: block;
+            width: 200px;
+            margin: 40px auto;
+        }
+
+        .dropdown {
+            border: none;
+            font-size: 29px;
+            margin: 70px;
+        }
+
+        .droplable {
+            text-align: center;
+            font-size: 27px;
+            font-weight: bold;
+            margin-left: 250px
+        }
+
+        .thanks {
+            display: none;
+            font-size: 50px;
+            border: none;
+            font-style: oblique;
+            font-weight: bold;
+        }
+
+        .footer {
+            background-color: rgb(53, 53, 135);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin: 0px;
+        }
+
+        .footer div {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .footer-info h3,
+        .footer-social h3 {
+            font-size: 18px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            color: white;
+        }
+
+        .footer img {
+            margin: 5px;
+            filter: brightness(70%);
+        }
+
+        table {
+            border-color: skyblue;
+            margin: 30px;
+            font-size: 30px;
+            text-align: center;
+            margin: 50px auto;
+        }
+
+        table th {
+            padding: 29px 50px;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <img src="http://college4u.in/wp-content/uploads/2019/07/1200px-Vellore_Institute_of_Technology_seal_2017.svg_-830x876.png"
+                alt="Nt Found">
+            <div>VIT</div>
+        </div>
+        <div class="mid">
+            <a href="#">VIT</a>
+            <a href="#">Campus Life</a>
+            <a href="#" class="active">Test</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="right">
+            <button class="btn">Call Us</button>
+            <button class="btn">Email Us</button>
+        </div>
+    </header>
+    <h1>VIT Admission Test</h1>
+    <div class="total">
+        <div class="hide show1 box" style="display: inline-block;">
+            <p>Question 1: What is the capital of France?</p>
+            <ul>
+                <li><input type="radio" name="q1" value="Paris"> Paris</li>
+                <li><input type="radio" name="q1" value="London"> London</li>
+                <li><input type="radio" name="q1" value="Berlin"> Berlin</li>
+                <li><input type="radio" name="q1" value="na">None of the above</li>
+            </ul>
+            <button class="next" onclick="next(1)">NEXT</button>
+            <div class="countdown" id="countdown1"></div>
+        </div>
+        <div class="hide show2 box">
+            <p>Question 2: Which planet is known as the Red Planet?</p>
+            <ul>
+                <li><input type="radio" name="q2" value="Venus"> Venus</li>
+                <li><input type="radio" name="q2" value="Mars"> Mars</li>
+                <li><input type="radio" name="q2" value="Jupiter"> Jupiter</li>
+                <li><input type="radio" name="q2" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(2)">BACK</button>
+            <button class="next" onclick="next(2)">NEXT</button>
+            <div class="countdown" id="countdown2"></div>
+        </div>
+        <div class="hide show3 box">
+            <p>Question 3: Select the correct options. Which of the following are fruits?</p>
+            <ul>
+                <li><input type="checkbox" name="q3a" value="Apple"> Apple</li>
+                <li><input type="checkbox" name="q3b" value="Carrot"> Carrot</li>
+                <li><input type="checkbox" name="q3c" value="Banana"> Banana</li>
+                <li><input type="checkbox" name="q3d" value="Potato"> Potato</li>
+            </ul>
+            <button class="back" onclick="back(3)">BACK</button>
+            <button class="next" onclick="next(3)">NEXT</button>
+            <div class="countdown" id="countdown3"></div>
+        </div>
+        <div class="hide show4 box">
+            <p>Question 4: Which gas do plants use for photosynthesis?</p>
+            <ul>
+                <li><input type="radio" name="q4" value="Oxygen"> Oxygen</li>
+                <li><input type="radio" name="q4" value="Carbon dioxide"> Carbon dioxide</li>
+                <li><input type="radio" name="q4" value="Hydrogen"> Hydrogen</li>
+                <li><input type="radio" name="q4" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(4)">BACK</button>
+            <button class="next" onclick="next(4)">NEXT</button>
+            <div class="countdown" id="countdown4"></div>
+        </div>
+        <div class="hide show5 box">
+            <p>Question 5: What is the largest mammal?</p>
+            <ul>
+                <li><input type="radio" name="q5" value="Elephant"> Elephant</li>
+                <li><input type="radio" name="q5" value="Whale"> Whale</li>
+                <li><input type="radio" name="q5" value="Giraffe"> Giraffe</li>
+                <li><input type="radio" name="q5" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(5)">BACK</button>
+            <button class="next" onclick="next(5)">NEXT</button>
+            <div class="countdown" id="countdown5"></div>
+        </div>
+        <div class="hide show6 box">
+            <p>Question 6: Which gas is responsible for the greenhouse effect?</p>
+            <ul>
+                <li><input type="radio" name="q6" value="Nitrogen"> Nitrogen</li>
+                <li><input type="radio" name="q6" value="Oxygen"> Oxygen</li>
+                <li><input type="radio" name="q6" value="Carbon dioxide"> Carbon dioxide</li>
+                <li><input type="radio" name="q6" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(6)">BACK</button>
+            <button class="next" onclick="next(6)">NEXT</button>
+            <div class="countdown" id="countdown6"></div>
+        </div>
+        <div class="hide show7 box">
+            <p>Question 7: What is the chemical symbol for gold?</p>
+            <ul>
+                <li><input type="radio" name="q7" value="Au"> Au</li>
+                <li><input type="radio" name="q7" value="Ag"> Ag</li>
+                <li><input type="radio" name="q7" value="G"> G</li>
+                <li><input type="radio" name="q7" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(7)">BACK</button>
+            <button class="next" onclick="next(7)">NEXT</button>
+            <div class="countdown" id="countdown7"></div>
+        </div>
+        <div class="hide show8 box">
+            <p>Question 8: What is the chemical symbol for silver?</p>
+            <ul>
+                <li><input type="radio" name="q8" value="Au"> Au</li>
+                <li><input type="radio" name="q8" value="Ag"> Ag</li>
+                <li><input type="radio" name="q8" value="Si"> Si</li>
+                <li><input type="radio" name="q8" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(8)">BACK</button>
+            <button class="next" onclick="next(8)">NEXT</button>
+            <div class="countdown" id="countdown8"></div>
+        </div>
+        <div class="hide show9 box">
+            <p>Question 9: What is the largest planet in our solar system?</p>
+            <ul>
+                <li><input type="radio" name="q9" value="Earth"> Earth</li>
+                <li><input type="radio" name="q9" value="Jupiter"> Jupiter</li>
+                <li><input type="radio" name="q9" value="Mars"> Mars</li>
+                <li><input type="radio" name="q9" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(9)">BACK</button>
+            <button class="next" onclick="next(9)">NEXT</button>
+            <div class="countdown" id="countdown9"></div>
+        </div>
+        <div class="hide show10 box">
+            <p>Question 10: Which gas is essential for respiration?</p>
+            <ul>
+                <li><input type="radio" name="q10" value="Carbon dioxide"> Carbon dioxide</li>
+                <li><input type="radio" name="q10" value="Hydrogen"> Hydrogen</li>
+                <li><input type="radio" name="q10" value="Oxygen"> Oxygen</li>
+                <li><input type="radio" name="q10" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(10)">BACK</button>
+            <button class="next" onclick="next(10)">NEXT</button>
+            <div class="countdown" id="countdown10"></div>
+        </div>
+        <div class="hide show11 box">
+            <p>Question 11: Which gas is responsible for making the sky appear blue?</p>
+            <ul>
+                <li><input type="radio" name="q11" value="Oxygen"> Oxygen</li>
+                <li><input type="radio" name="q11" value="Nitrogen"> Nitrogen</li>
+                <li><input type="radio" name="q11" value="Carbon dioxide"> Carbon dioxide</li>
+                <li><input type="radio" name="q11" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(11)">BACK</button>
+            <button class="next" onclick="next(11)">NEXT</button>
+            <div class="countdown" id="countdown11"></div>
+        </div>
+        <div class="hide show12 box">
+            <p>Question 12: What is the smallest prime number?</p>
+            <ul>
+                <li><input type="radio" name="q12" value="1"> 1</li>
+                <li><input type="radio" name="q12" value="2"> 2</li>
+                <li><input type="radio" name="q12" value="3"> 3</li>
+                <li><input type="radio" name="q12" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(12)">BACK</button>
+            <button class="next" onclick="next(12)">NEXT</button>
+            <div class="countdown" id="countdown12"></div>
+        </div>
+        <div class="hide show13 box">
+            <p>Question 13: What is the chemical symbol for water?</p>
+            <ul>
+                <li><input type="radio" name="q13" value="Wa"> Wa</li>
+                <li><input type="radio" name="q13" value="H2O"> H2O</li>
+                <li><input type="radio" name="q13" value="W"> W</li>
+                <li><input type="radio" name="q13" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(13)">BACK</button>
+            <button class="next" onclick="next(13)">NEXT</button>
+            <div class="countdown" id="countdown13"></div>
+        </div>
+        <div class="hide show14 box">
+            <p>Question 14: What is the chemical formula for glucose?</p>
+            <ul>
+                <li><input type="radio" name="q14" value="C12H6O6"> C12H6O6</li>
+                <li><input type="radio" name="q14" value="CO2"> CO2</li>
+                <li><input type="radio" name="q14" value="H2O"> H2O</li>
+                <li><input type="radio" name="q14" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(14)">BACK</button>
+            <button class="next" onclick="next(14)">NEXT</button>
+            <div class="countdown" id="countdown14"></div>
+        </div>
+        <div class="hide show15 box">
+            <p>Question 15: Which gas is commonly used for extinguishing fires?</p>
+            <ul>
+                <li><input type="radio" name="q15" value="Oxygen"> Oxygen</li>
+                <li><input type="radio" name="q15" value="Nitrogen"> Nitrogen</li>
+                <li><input type="radio" name="q15" value="Carbon dioxide"> Carbon dioxide</li>
+                <li><input type="radio" name="q15" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(15)">BACK</button>
+            <button class="next" onclick="next(15)">NEXT</button>
+            <div class="countdown" id="countdown15"></div>
+        </div>
+        <div class="hide show16 box">
+            <p>Question 16: What is the largest bird in the world?</p>
+            <ul>
+                <li><input type="radio" name="q16" value="Ostrich"> Ostrich</li>
+                <li><input type="radio" name="q16" value="Eagle"> Eagle</li>
+                <li><input type="radio" name="q16" value="Penguin"> Penguin</li>
+                <li><input type="radio" name="q16" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(16)">BACK</button>
+            <button class="next" onclick="next(16)">NEXT</button>
+            <div class="countdown" id="countdown16"></div>
+        </div>
+        <div class="hide show17 box">
+            <p>Question 17: Which gas is known as laughing gas?</p>
+            <ul>
+                <li><input type="radio" name="q17" value="Oxygen"> Oxygen</li>
+                <li><input type="radio" name="q17" value="Carbon dioxide"> Carbon dioxide</li>
+                <li><input type="radio" name="q17" value="Nitrous oxide"> Nitrous oxide</li>
+                <li><input type="radio" name="q17" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(17)">BACK</button>
+            <button class="next" onclick="next(17)">NEXT</button>
+            <div class="countdown" id="countdown17"></div>
+        </div>
+        <div class="hide show18 box">
+            <p>Question 18: What is the largest planet in our solar system?</p>
+            <ul>
+                <li><input type="radio" name="q18" value="Earth"> Earth</li>
+                <li><input type="radio" name="q18" value="Jupiter"> Jupiter</li>
+                <li><input type="radio" name="q18" value="Mars"> Mars</li>
+                <li><input type="radio" name="q18" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(18)">BACK</button>
+            <button class="next" onclick="next(18)">NEXT</button>
+            <div class="countdown" id="countdown18"></div>
+        </div>
+        <div class="hide show19 box">
+            <p>Question 19: What is the chemical symbol for silver?</p>
+            <ul>
+                <li><input type="radio" name="q19" value="Au"> Au</li>
+                <li><input type="radio" name="q19" value="Ag"> Ag</li>
+                <li><input type="radio" name="q19" value="G"> G</li>
+                <li><input type="radio" name="q19" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(19)">BACK</button>
+            <button class="next" onclick="next(19)">NEXT</button>
+            <div class="countdown" id="countdown19"></div>
+        </div>
+        <div class="hide show20 box">
+            <p>Question 20: What is the chemical formula for sodium?</p>
+            <ul>
+                <li><input type="radio" name="q20" value="Na"> Wa</li>
+                <li><input type="radio" name="q20" value="Sd"> H2O</li>
+                <li><input type="radio" name="q20" value="So"> W</li>
+                <li><input type="radio" name="q20" value="na">None of the above</li>
+            </ul>
+            <button class="back" onclick="back(20)">BACK</button>
+            <button class="next" onclick="end()">REVIEW</button>
+            <div class="countdown" id="countdown20"></div>
+        </div>
+
+        <div class="submit"></div>
+        <div class="feedback"></div>
+    </div>
+    <div class="thanks box"> Thanks Your Response is Submitted</div>
+    <div class="table" style="display: none;">
+        <p>hello</p>
+    </div>
+
+    <script>
+        let userAnswers = new Array(20).fill('');
+        let score = 0;
+
+        function updateUserAnswer(questionNumber) {
+            const radioButton = document.querySelector(`input[name="q${questionNumber}"]:checked`);
+            if (radioButton) {
+                userAnswers[questionNumber - 1] = radioButton.value;
+            }
+        }
+
+        const correctAnswers = [
+            'Paris', 'Mars', ['Apple', 'Banana'], 'Carbon dioxide', 'Whale',
+            'Carbon dioxide', 'Au', 'Ag', 'Jupiter', 'Oxygen',
+            'Nitrogen', '2', 'H2O', 'C12H6O6', 'Carbon dioxide',
+            'Ostrich', 'Nitrous oxide', 'Jupiter', 'Ag', 'Na'
+        ];
+        let currentQuestion = 1;
+        let countdownInterval;
+        let remainingSeconds;
+        let timeremain = [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30];
+
+        function startCountdown() {
+            const countdownElement = document.getElementById(`countdown${currentQuestion}`);
+            remainingSeconds = timeremain[currentQuestion - 1];
+
+            function updateCountdown() {
+                remainingSeconds--;
+                countdownElement.textContent = "Time Remaining: " + remainingSeconds + " sec";
+                timeremain[currentQuestion - 1] = remainingSeconds;
+                if (remainingSeconds <= 0) {
+                    clearInterval(countdownInterval);
+                    next(currentQuestion);
+                }
+            }
+            countdownInterval = setInterval(updateCountdown, 1000);
+        }
+        window.onload = startCountdown;
+
+        function back(number) {
+            let before = number - 1;
+            let showing_q = document.getElementsByClassName("show" + number)[0];
+            let previous_q = document.getElementsByClassName("show" + before)[0];
+            showing_q.style.display = "none";
+            previous_q.style.display = "inline-block";
+            clearInterval(countdownInterval);
+            currentQuestion = before;
+            remainingSeconds = timeremain[before - 1];
+            startCountdown();
+        }
+
+        function next(number) {
+            let after = number + 1;
+            let showing_q = document.getElementsByClassName("show" + number)[0];
+            let next_q = document.getElementsByClassName("show" + after)[0];
+            showing_q.style.display = "none";
+            next_q.style.display = "inline-block";
+            clearInterval(countdownInterval);
+            currentQuestion = after;
+            remainingSeconds = timeremain[after - 1];
+            startCountdown();
+        }
+
+        function end() {
+            clearInterval(countdownInterval);
+            let boxes = document.getElementsByClassName("hide");
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].style.display = "block";
+                let buttons = boxes[i].querySelectorAll("button");
+                buttons.forEach(function (button) {
+                    button.style.display = "none";
+                });
+            }
+            let newButton = document.createElement("button");
+            newButton.textContent = "SUBMIT";
+            newButton.addEventListener("click", thank);
+            newButton.className = "new-button";
+            let submitSpan = document.querySelector(".submit");
+            if (submitSpan) { submitSpan.appendChild(newButton); }
+        }
+
+        function thank() {
+            let boxes = document.getElementsByClassName("hide");
+            let sub = document.getElementsByClassName("submit");
+            sub[0].style.display = "none";
+            for (let i = 0; i < boxes.length; i++) {
+                boxes[i].style.display = "none";
+            }
+
+            let droplabel = document.createElement("label");
+            droplabel.textContent = "How do you Feel the Quetions";
+            droplabel.className = "droplable";
+
+            let drop = document.createElement("select");
+            drop.className = "dropdown box";
+            let option1 = document.createElement("option");
+            option1.text = "EASY ";
+            let option2 = document.createElement("option");
+            option2.text = "MEDIUM ";
+            let option3 = document.createElement("option");
+            option3.text = "HARD ";
+            drop.appendChild(option1);
+            drop.appendChild(option2);
+            drop.appendChild(option3);
+
+            let newButton = document.createElement("button");
+            newButton.textContent = "SUBMIT";
+            newButton.className = "new-button";
+            newButton.addEventListener("click", final);
+
+            let parentElement = document.getElementsByClassName("feedback")[0];
+            parentElement.appendChild(droplabel);
+            parentElement.appendChild(drop);
+            parentElement.appendChild(newButton);
+
+        }
+
+        function final() {
+            let total = document.getElementsByClassName("total")[0];
+            total.style.display = "none";
+            let final = document.getElementsByClassName("thanks")[0];
+            final.style.display = "block";
+
+            let newButton = document.createElement("button");
+            newButton.textContent = "SHOW RESULT";
+            newButton.className = "new-button";
+            newButton.addEventListener("click", showResults);
+
+            let parentElement = document.getElementsByClassName("thanks")[0];
+            parentElement.appendChild(newButton);
+        }
+        function showResults() {
+            document.querySelector('.thanks').style.display = 'none';
+            document.querySelector('.table').style.display = 'block';
+
+            // Update user answers for all questions
+            for (let i = 1; i <= 20; i++) {
+                updateUserAnswer(i);
+            }
+            generateResultTable(score);
+        }
+
+        function generateResultTable() {
+            let resultTableHTML = '<h1 style = "color: skyblue;">Quiz Results</h1><table border="2" margin="30px">';
+            resultTableHTML += '<tr><th>Question</th><th>User Answer</th><th>Correct Answer</th><th>Time Taken (seconds)</th></tr>';
+            for (let i = 1; i <= 20; i++) {
+                let userAnswer = userAnswers[i - 1];
+                let correctAnswer = correctAnswers[i - 1];
+                let timeTaken = 30 - timeremain[i - 1];
+                if (userAnswer === correctAnswer) { score++; }
+                resultTableHTML += `<tr><td>Question ${i}</td><td>${userAnswer}</td><td>${correctAnswer}</td><td>${timeTaken}</td></tr>`;
+            }
+            resultTableHTML += `<td colspan = "4" style = "text-align: center; font-weight: bold;">Total Score: ${score}</td>`;
+            resultTableHTML += '</table>';
+            document.querySelector('.table').innerHTML = resultTableHTML;
+        }
+    </script>
+
+    <footer class="footer">
+        <div>
+            <img src="https://tse2.mm.bing.net/th?id=OIP.qE3RTbwfxXDZV0g-H8wOxgAAAA&pid=Api&P=0&h=180" alt="vitphoto"
+                style="display: inline-block;">
+        </div>
+        <div>
+            <div class="footer-info">
+                <h3>Contact Information</h3>
+                <p>Email: info@vit.edu</p>
+                <p>Phone: +1 (123) 456-7890</p>
+                <p>Address: VIT University, Vellore, Tamilnadu -632014</p>
+            </div>
+            <div class="footer-social">
+                <h3>Connect with Us</h3>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
